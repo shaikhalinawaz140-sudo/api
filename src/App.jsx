@@ -4,7 +4,7 @@ const App = () => {
   const [Product, setProduct] = useState([])
 
   async function getdata() {
-    let res = await fetch('https://dummyjson.com/products')
+    let res = await fetch('https://jsonplaceholder.typicode.com/users')
     let data = await res.json()
     setProduct(data.products)
   }
@@ -17,8 +17,8 @@ const App = () => {
       
 
       {Product.map((item) => (
-        <div key={item.id}  >
-          <img src={item.thumbnail} width="250" height="250" />
+        <div key={item.usernam}  >
+          {/* <img src={item.thumbnail} width="250" height="250" /> */}
           <h2>{item.title}</h2>
           <h3>${item.price}</h3>
         </div>
